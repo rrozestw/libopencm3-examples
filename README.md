@@ -1,3 +1,15 @@
+#### FORK INFO #########################################
+
+Adjusted examples/stm32/f1/other/usb_cdcacm/ for STM32F103C8 blue pill board - pulling A12 for a while for USB enumeration.
+
+Add 1.6k resistor between 3.3V and A12.
+
+make in /
+make in examples/stm32/f1/other/usb_cdcacm
+cd examples/stm32/f1/other/usb_cdcacm ; ./BURN_WORKS.sh (cheap stlinkv2)
+
+########################################################
+
 # README
 
 [![Gitter channel](https://badges.gitter.im/libopencm3/discuss.svg)](https://gitter.im/libopencm3/discuss)

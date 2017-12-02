@@ -240,6 +240,17 @@ int main(void)
 	rcc_periph_clock_enable(RCC_GPIOA);
 	rcc_periph_clock_enable(RCC_AFIO);
 
+	
+	gpio_set_mode(GPIOA, GPIO_MODE_OUTPUT_2_MHZ,
+		      GPIO_CNF_OUTPUT_PUSHPULL, GPIO12);
+	
+	gpio_clear(GPIOA, GPIO12);
+	
+	volatile unsigned int delay;
+	for(delay = 0;delay<512;delay++);
+	
+	gpio_clear(GPIOA, GPIO12);
+	
 	AFIO_MAPR |= AFIO_MAPR_SWJ_CFG_JTAG_OFF_SW_ON;
 
 	gpio_set_mode(GPIOA, GPIO_MODE_INPUT, 0, GPIO15);
